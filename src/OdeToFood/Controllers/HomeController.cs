@@ -80,7 +80,7 @@ namespace OdeToFood.Controllers
             return View(restaurant);
         }
 
-        // bob
+        // bill & ted
 
         [HttpGet]
         public ViewResult Create()
