@@ -1,0 +1,29 @@
+﻿@using OdeToFood.Controllers
+@model LoginViewModel
+@{
+    ViewBag.Title = nameof(ProfileController.Login);
+}
+
+<h2>@nameof(ProfileController.Login)</h2>
+
+<form method="post" asp-controller="@nameof(ProfileController).Replace("Controller", "")"
+      asp-action="@nameof(ProfileController.Login)"
+      asp-route-returnurl="@Model.ReturnUrl">
+    <div asp-validation-summary="ValidationSummary.ModelOnly"></div>
+    <div>
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" />
+        <span asp-validation-for="UserName"></span>
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div>
+        <label asp-for="RememberMe"></label>
+        <input asp-for="RememberMe" />
+        <span asp-validation-for="RememberMe"></span>
+    </div>
+    <input type="submit" value="Login" />
+</form>
